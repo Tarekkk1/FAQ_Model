@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+        <menu>
+            <add id="Custom_FAQ::main_menu" title="Custom FAQ" module="Custom_FAQ" sortOrder="10" resource="Custom_FAQ::main_menu"/>
+            <add id="Custom_FAQ::question" title="Manage Questions" module="Custom_FAQ" sortOrder="10" parent="Custom_FAQ::main_menu" action="custom_faq/question/index" resource="Custom_FAQ::question"/>
+        </menu>
+</config>

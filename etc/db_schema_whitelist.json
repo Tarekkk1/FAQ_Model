@@ -1,0 +1,23 @@
+{
+    "categories": {
+        "column": {
+            "id": true,
+            "title": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "questions": {
+        "column": {
+            "id": true,
+            "title": true,
+            "answer": true,
+            "category_id": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "QUESTIONS_CATEGORY_ID_CATEGORIES_ID": true
+        }
+    }
+}
