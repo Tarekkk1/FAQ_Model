@@ -11,7 +11,7 @@ class Action extends Column
 {
     const ROW_EDIT_URL = 'custom_faq/question/newquestion';
     
-    // const ROW_DELETE_URL = 'custom_faq/question/deletequestion';
+    const ROW_DELETE_URL = 'custom_faq/question/deletequestion';
     /** @var UrlInterface */
     protected $_urlBuilder;
 
@@ -49,11 +49,11 @@ class Action extends Column
      * @return array
      */
     public function prepareDataSource(array $dataSource)
-    {   
+    {
+
         if (isset($dataSource['data']['items'])) {
             foreach ($dataSource['data']['items'] as &$item) {
                 $name = $this->getData('name');
-                
                 if (isset($item['id'])) {
                     $item[$name]['edit'] = [
                         'href' => $this->_urlBuilder->getUrl(
@@ -62,10 +62,17 @@ class Action extends Column
                         ),
                         'label' => __('Edit'),
                     ];
-                    
+                     $item[$name]['delete'] = [
+                        'href' => $this->_urlBuilder->getUrl(
+                            self::ROW_DELETE_URL,
+                            ['id' => $item['id']]
+                        ),
+                        'label' => __('Delete'),
+                    ];
                 }
             }
         }
+
         return $dataSource;
     }
 }
