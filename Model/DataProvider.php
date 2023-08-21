@@ -24,13 +24,21 @@ class DataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
         parent::__construct($name, $primaryFieldName, $requestFieldName, $meta, $data);
     }
 
-    public function getData()
+public function getData(): array
     {
-        $items = $this->collection->getItems();
-        $this->loadedData = array();
-        /** @var Customer $customer */
-        foreach ($items as $faq) {
-            $this->loadedData[$faq->getId()] = $faq->getData();
+        if (isset($this->loadedData)) {
+            return $this->loadedData;
         }
+
+        $items = $this->collection->getItems();
+        $this->loadedData=[];
+        foreach ($items as $item) {
+            $this->loadedData[$item->getId()] = $item->getData();
+        }
+        // print_r($this->loadedData);
+        // exit;
+        
         return $this->loadedData;
-    }}
+    }
+
+   }

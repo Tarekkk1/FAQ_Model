@@ -77,7 +77,6 @@
                 </item>
             </argument>
         </field>
-      
         <field name="category_id">
     <argument name="data" xsi:type="array">
         <item name="options" xsi:type="object">Custom\FAQ\Model\Source\Category</item>

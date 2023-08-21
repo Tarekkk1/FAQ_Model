@@ -1,0 +1,16 @@
+type Query {
+    questions(category_id: Int): [Question] @resolver(class: "Custom\\FAQ\\Model\\Resolver\\Questions") @doc(description: "Retrieve questions based on category ID or fetch all if no category ID is provided")
+}
+
+type Question {
+    id: Int!
+    title: String!
+    answer: String!
+    category: Category!
+}
+
+
+type Category {
+    id: Int!
+    title: String!
+}

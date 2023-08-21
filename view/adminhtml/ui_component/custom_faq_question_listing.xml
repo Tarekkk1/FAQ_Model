@@ -111,17 +111,17 @@
                 </item>
             </argument>
         </column>
-          <!-- <column name="id">
+          <column name="id">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="filter" xsi:type="string">textRange</item>
                     <item name="sorting" xsi:type="string">asc</item>
-                    <item name="label" xsi:type="string" translate="true">Question ID</item>
+                    <item name="label" xsi:type="string" translate="true">id</item>
                    
                 </item>
             </argument>
             
-        </column> -->
+        </column>
          <column name="title"   >
 
             <argument name="data" xsi:type="array">
